@@ -4,6 +4,7 @@ A new Flutter project.
 
 
 Animated Space Application 🌌
+
 The Animated Space Application is a unique, interactive platform that combines stunning visuals with educational content to explore the mysteries of the cosmos. Designed for space enthusiasts of all ages, it seamlessly blends entertainment and learning through captivating animations and user-friendly design.
 
 . Informative Content
