@@ -181,7 +181,7 @@ class _detailsPageState extends State<detailsPage>
                                           MaterialPageRoute(builder: (context) => LikePage()),
                                         );
                                         setState(() {
-                                          like = selectedIndex;
+                                         spaceProvider.likeList.add(spaceProvider.planetListAll[selectedIndex].name);
                                         });
 
 

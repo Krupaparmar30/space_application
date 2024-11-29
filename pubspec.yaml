@@ -39,6 +39,8 @@ dependencies:
   carousel_slider: ^5.0.0
   provider: ^6.1.2
   shared_preferences: ^2.3.3
+  expandable_page_view: ^1.0.17
+  so_simple_splash: ^0.0.1
 
 dev_dependencies:
   flutter_test:

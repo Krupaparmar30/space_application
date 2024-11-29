@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:space_application/details/details.dart';
 import 'package:space_application/provider/providers.dart';
 import 'package:space_application/secPage/secPage.dart';
+import 'package:space_application/splesh/splesh.dart';
 
 import 'LikePage/LikePage.dart';
 import 'homePage/homePage.dart';
@@ -22,7 +23,8 @@ class myApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
        routes: {
-          '/':(context)=>homePage(),
+          '/':(context)=>SpleshPage(),
+         '/home':(context)=>homePage(),
           '/sec':(context)=>secPage(),
          '/det':(context)=>detailsPage(),
          '/fav':(context)=>LikePage()

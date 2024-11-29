@@ -10,10 +10,10 @@ class SpaceProvider extends ChangeNotifier {
   List<Planet> planetListAll = [];
   List<Planet> bookmarkedList = [];
 
-
+  List<String> likeList = [];
   SpaceProvider() {
     jsonParsing();
-    loadBookmarkedPlanets();
+
   }
 
   Future<void> jsonParsing() async {
@@ -22,21 +22,20 @@ class SpaceProvider extends ChangeNotifier {
     planetListAll = dataList.map((e) => Planet.fromJson(e)).toList();
     notifyListeners();
   }
-  Future<void> loadBookmarkedPlanets() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<String>? bookmarkedPlanets = prefs.getStringList('bookmarkedPlanets');
+  Future<void> addFavourite(String name) async {
+    String data = "$name";
 
-    if (bookmarkedPlanets != null) {
-      bookmarkedList = planetListAll
-          .where((planet) => bookmarkedPlanets.contains(planet.name))
-          .toList();
-      notifyListeners();
-    }
+
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    likeList.add(data);
+    // likeList.add(image);
+
+    sharedPreferences.setStringList('likeList', likeList);
   }
-  Future<void> saveBookmarkedPlanets() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<String> bookmarkedPlanets =
-    bookmarkedList.map((planet) => planet.name).toList();
-    await prefs.setStringList('bookmarkedPlanets', bookmarkedPlanets);
+
+  void remove(int index)
+  {
+    planetListAll.removeAt(index);
+    notifyListeners();
   }
 }
